@@ -1,0 +1,17 @@
+<form (submit)="saveBook()">
+	<h1>
+		Create a book
+	</h1>
+
+	<div class="group">
+		<input type="text" required="required" [(ngModel)]="newBook.title" name="title">
+		<span class="highlight"></span>
+		<span class="bar"></span>
+		<label>Name</label>
+	</div>
+
+	<div class="btn-box">
+		<button class="btn btn-submit" type="submit">submit</button>
+		<button class="btn btn-cancel" type="button">cancel</button>
+	</div>
+</form>

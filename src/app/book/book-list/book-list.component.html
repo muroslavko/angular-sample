@@ -1,11 +1,13 @@
-<p>
-  book-list works!
-</p>
+<div class="title">
+    {{title}}
+</div>
 
-<book-details>
+<div style="display: flex; flex-direction: column;">
+    <book-details [item]="book" >
 
-</book-details>
+    </book-details>
 
-<book-details>
-    
-</book-details>
+    <book-details [item]="book" titleColor="red">
+
+    </book-details>
+</div>

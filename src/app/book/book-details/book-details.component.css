@@ -1,0 +1,68 @@
+.container {
+    margin: 3em auto;
+    width: 90%;
+    max-width: 1100px;
+  }
+  :host{
+    margin-bottom: 1em;
+  }
+  /* .book-title {
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #959595;
+  }
+  .book-title:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    border-bottom: 3px solid #e2cef9;
+    width: 30px;
+  } */
+  .book {
+    float: left;
+    width: 47.5%;
+    margin-right: 5%;
+  }
+  .book:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .book-title {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 1.25em;
+    line-height: 2.5em;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  .book-title:hover{
+	  cursor: pointer;
+	  color: #81a1d4;
+  }
+  .book-title:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background-color: #e2cef9;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 50%;
+  }
+  .book-title span {
+    padding-left: 15px;
+  }
+  .book-details {
+    padding-left: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.1em;
+    line-height: em(27);
+    font-weight: 400;
+    color: #959595;
+  }

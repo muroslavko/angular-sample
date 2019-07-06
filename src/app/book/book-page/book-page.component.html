@@ -1,0 +1,13 @@
+<button class="btn btn-submit" (click)="hideCreateBook = !hideCreateBook" style="margin-bottom: 1em;">
+	<span [hidden]="!hideCreateBook"> Show </span>
+	<span [hidden]="hideCreateBook"> Hide </span>
+	edit
+</button>
+
+<app-book-create [hidden]="hideCreateBook">
+
+</app-book-create>
+
+<book-list>
+
+</book-list>
