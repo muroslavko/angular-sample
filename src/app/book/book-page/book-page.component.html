@@ -4,7 +4,7 @@
 	edit
 </button>
 
-<app-book-create [hidden]="hideCreateBook">
+<app-book-create [hidden]="hideCreateBook" (newBook)="addNewBook($event)">
 
 </app-book-create>
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Book } from 'src/app/models/book';
 
 @Component({
@@ -8,7 +8,9 @@ import { Book } from 'src/app/models/book';
 })
 export class BookCreateComponent implements OnInit {
 
-	newBook: Book ={
+	@Output() newBook = new EventEmitter<Book>();
+
+	book: Book = {
 		author: '',
 		description: '',
 		publishedDate: new Date(),
@@ -22,6 +24,7 @@ export class BookCreateComponent implements OnInit {
 
 
 	saveBook() {
-		console.log(this.newBook);
+		console.log('Emit event');
+		this.newBook.emit(this.book);
 	}
 }

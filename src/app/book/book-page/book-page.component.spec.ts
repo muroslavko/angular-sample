@@ -7,19 +7,19 @@ describe('BookPageComponent', () => {
   let fixture: ComponentFixture<BookPageComponent>;
 
   beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ BookPageComponent ]
-    })
-    .compileComponents();
+	TestBed.configureTestingModule({
+		declarations: [ BookPageComponent ]
+	})
+	.compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BookPageComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+	fixture = TestBed.createComponent(BookPageComponent);
+	component = fixture.componentInstance;
+	fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+	expect(component).toBeTruthy();
   });
 });

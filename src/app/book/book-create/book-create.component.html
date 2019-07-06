@@ -1,10 +1,10 @@
-<form (submit)="saveBook()">
+<form (ngSubmit)="saveBook()">
 	<h1>
 		Create a book
 	</h1>
 
 	<div class="group">
-		<input type="text" required="required" [(ngModel)]="newBook.title" name="title">
+		<input type="text" required="required" [(ngModel)]="book.title" name="title">
 		<span class="highlight"></span>
 		<span class="bar"></span>
 		<label>Name</label>
