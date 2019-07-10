@@ -11,6 +11,8 @@ import { BookCreateComponent } from './book/book-create/book-create.component';
 import { BookPageComponent } from './book/book-page/book-page.component';
 import { ZoomDirective } from './directive/zoom.directive';
 import { BookTitlePipe } from './pipes/book-title.pipe';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BookTitlePipe } from './pipes/book-title.pipe';
 	BookCreateComponent,
 	BookPageComponent,
 	ZoomDirective,
-	BookTitlePipe
+	BookTitlePipe,
+	UserDetailsComponent,
+	NavigationMenuComponent
   ],
   imports: [
     BrowserModule,
