@@ -30,16 +30,14 @@ export class BookPageComponent implements OnInit {
     
     showEdit() {
         if (this.hideCreateBook) {
-            this.selectedBook = {} as Book;
             this.selectedBookIndex = -1;
-        } else {
-            this.selectedBook = {
-                author: '',
-                description: '',
-                publishedDate: new Date(),
-                title: ''
-            };
-        }
+        } 
+        this.selectedBook = {
+            author: '',
+            description: '',
+            publishedDate: new Date(),
+            title: ''
+        };
         this.hideCreateBook = !this.hideCreateBook;
     }
 
