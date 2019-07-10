@@ -18,7 +18,8 @@ export class BookCreateComponent implements OnInit {
 
 
 	saveBook() {
-		console.log('Emit event');
+        console.log('Emit event');
+        this.book.publishedDate = new Date(this.book.publishedDate);
         this.bookChange.emit(this.book);
 	}
 }

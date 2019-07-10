@@ -30,7 +30,7 @@ body {
   }
   .group {
 	position: relative;
-	margin: 10px 0;
+	margin: 1rem 0;
   }
   textarea {
 	resize: none;
@@ -49,7 +49,7 @@ body {
   input:focus, textarea:focus {
 	outline: none;
   }
-  input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+  input:focus ~ label, textarea:focus ~ label, input.ng-dirty ~ label, textarea.ng-dirty ~ label {
 	top: -14px;
 	font-size: 12px;
 	color: #2196f3;
@@ -59,6 +59,30 @@ body {
   }
   input[type="password"] {
 	letter-spacing: 0.3em;
+  }
+  input.ng-invalid.ng-touched ~ .error,
+  input.ng-invalid.ng-touched ~ .custom-error,
+  input.ng-invalid.ng-dirty ~ .error,
+  input.ng-invalid.ng-dirty ~ .custom-error {
+	font-size: 12px;
+    color: #f34049;
+  }
+  input.ng-invalid.ng-touched ~ .custom-error {
+	display: none;
+  }
+  input.ng-pristine ~ .error,
+  input.ng-pristine ~ .custom-error,
+  input.ng-untouched ~ .error,
+  input.ng-untouched ~ .custom-error,
+  input.ng-valid ~ .error,
+  input.ng-valid ~ .custom-error {
+    display: none;
+  }
+  .custom-error.minlength-error.minlength {
+      display: block !important;
+  }
+  input.ng-invalid.ng-touched ~ .custom-error.required-error.required {
+      display: block !important;
   }
   label {
 	color: #c6c6c6;
@@ -128,4 +152,7 @@ body {
   .btn-box {
 	text-align: center;
 	margin: 50px 0;
+  }
+  .btn-submit:disabled, .btn-submit:disabled:hover {
+      background: #9bafc0;
   }

@@ -1,17 +1,61 @@
-<form (ngSubmit)="saveBook()">
-	<h1>
-		Create a book
-	</h1>
+<form (ngSubmit)="saveBook()" #bookForm="ngForm">
+    <h1>
+        Create a book
+    </h1>
 
-	<div class="group">
-		<input type="text" required="required" [(ngModel)]="book.title" name="title">
-		<span class="highlight"></span>
-		<span class="bar"></span>
-		<label>Name</label>
-	</div>
+    <div class="group">
+        <input type="text" [(ngModel)]="book.title" name="title" required minlength="4" autocomplete="off"
+            #title="ngModel">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Name</label>
+        <!-- {{ title.errors | json }} -->
+        <div class="custom-error required-error" [ngClass]="title.errors">
+            Title is required
+        </div>
+        <div class="custom-error minlength-error" [ngClass]="title.errors">
+            Tittle must be at least 4 characters long.
+        </div>
+    </div>
 
-	<div class="btn-box">
-		<button class="btn btn-submit" type="submit">submit</button>
-		<button class="btn btn-cancel" type="button">cancel</button>
-	</div>
+    <div class="group">
+        <input type="text" [(ngModel)]="book.description" name="description" #description="ngModel"  autocomplete="off">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Description</label>
+    </div>
+
+    <div class="group">
+        <input type="text" [(ngModel)]="book.author" name="author" required minlength="4"  autocomplete="off"
+            #author="ngModel">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>Author</label>
+        <div class="error" [hidden]="author.valid && author.untouched || !author.errors?.required">
+            Author is required
+        </div>
+        <div class="error" *ngIf="author.errors?.minlength">
+            Author must be at least 4 characters long.
+        </div>
+    </div>
+    <div class="group">
+        <input type="date" [(ngModel)]="book.publishedDate" name="publishedDate" required
+            #publishedDate="ngModel">
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label>PublishedDate</label>
+        <div class="custom-error required-error" [ngClass]="publishedDate.errors">
+            PublishedDate is required
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button class="btn btn-submit" type="submit" [disabled]="bookForm.invalid">submit</button>
+        <button class="btn btn-cancel" type="button">cancel</button>
+    </div>
 </form>
+
+
+<ng-template #name>
+
+</ng-template>
