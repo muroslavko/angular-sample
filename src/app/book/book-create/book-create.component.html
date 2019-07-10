@@ -10,12 +10,8 @@
         <span class="bar"></span>
         <label>Name</label>
         <!-- {{ title.errors | json }} -->
-        <div class="custom-error required-error" [ngClass]="title.errors">
-            Title is required
-        </div>
-        <div class="custom-error minlength-error" [ngClass]="title.errors">
-            Tittle must be at least 4 characters long.
-        </div>
+        <ng-container *ngTemplateOutlet="error;" ></ng-container>
+        
     </div>
 
     <div class="group">
@@ -56,6 +52,11 @@
 </form>
 
 
-<ng-template #name>
-
+<ng-template #error>
+    <div class="custom-error required-error" [ngClass]="title.errors">
+        Is required
+    </div>
+    <div class="custom-error minlength-error" [ngClass]="title.errors">
+        Must be at least 4 characters long.
+    </div>
 </ng-template>
