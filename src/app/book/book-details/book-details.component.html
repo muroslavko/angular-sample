@@ -2,5 +2,5 @@
     <div class="book-title-block" (click)="bookSelected()">
         <span class="book-title" [style.color]="titleColor">{{item | bookTitle}}</span>
     </div>
-    <div class="book-details" appZoom>{{item?.description}}</div>
+    <div class="book-details" appZoom>{{item?.description.value}}</div>
 </div>

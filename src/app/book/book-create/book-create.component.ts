@@ -22,11 +22,11 @@ export class BookCreateComponent implements OnInit, OnChanges {
                 Validators.minLength(4)
             ]),
             'description': new FormControl(this.book.description),
-            'author': new FormControl(this.book.author,                [
+            'subtitle': new FormControl(this.book.subtitle,                [
                 Validators.required,
                 Validators.minLength(4)
             ]),
-            'publishedDate': new FormControl(this.book.publishedDate,[
+            'publish_date': new FormControl(this.book.publish_date,[
                 Validators.required
             ]) ,
         });
@@ -43,7 +43,7 @@ export class BookCreateComponent implements OnInit, OnChanges {
 	saveBook() {
         console.log('Emit event');
         let newBook = this.bookForm.value
-        newBook.publishedDate = new Date(newBook.publishedDate);
+        newBook.publish_date = new Date(newBook.publish_date);
         this.bookChange.emit(newBook);
         this.bookForm.reset();
     }

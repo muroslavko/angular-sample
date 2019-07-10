@@ -25,24 +25,24 @@
     </div>
 
     <div class="group">
-        <input type="text" formControlName="author"  autocomplete="off">
+        <input type="text" formControlName="subtitle"  autocomplete="off">
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>Author</label>
-         <div class="error" [hidden]="bookForm.get('author').valid && bookForm.get('author').untouched || !bookForm.get('author').errors?.required">
-            Author is required
+        <label>Subtitle</label>
+         <div class="error" [hidden]="bookForm.get('subtitle').valid && bookForm.get('subtitle').untouched || !bookForm.get('subtitle').errors?.required">
+            Subtitle is required
         </div>
-        <div class="error" *ngIf="bookForm.get('author').errors?.minlength">
-            Author must be at least 4 characters long.
+        <div class="error" *ngIf="bookForm.get('subtitle').errors?.minlength">
+            subtitle must be at least 4 characters long.
         </div> 
     </div>
     <div class="group">
-        <input type="date" formControlName="publishedDate">
+        <input type="date" formControlName="publish_date">
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label>PublishedDate</label>
-        <div class="custom-error required-error" [ngClass]="bookForm.get('publishedDate').errors">
-            PublishedDate is required
+        <label>Publish date</label>
+        <div class="custom-error required-error" [ngClass]="bookForm.get('publish_date').errors">
+            Publish date is required
         </div> 
     </div>
 

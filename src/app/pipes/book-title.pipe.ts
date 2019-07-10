@@ -8,7 +8,7 @@ export class BookTitlePipe implements PipeTransform {
 
     transform(value: Book, args?: any): any {
         if (value) {
-            return `${value.title} (${value.publishedDate.getFullYear()})`;
+            return `${value.title} (${value.publish_date.getFullYear()})`;
         }
 
         return '';
