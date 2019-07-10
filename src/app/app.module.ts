@@ -8,6 +8,7 @@ import { BookListComponent } from './book/book-list/book-list.component';
 import { BookDetailsComponent } from './book/book-details/book-details.component';
 import { BookCreateComponent } from './book/book-create/book-create.component';
 import { BookPageComponent } from './book/book-page/book-page.component';
+import { ZoomDirective } from './directive/zoom.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BookPageComponent } from './book/book-page/book-page.component';
 	BookListComponent,
 	BookDetailsComponent,
 	BookCreateComponent,
-	BookPageComponent
+	BookPageComponent,
+	ZoomDirective
   ],
   imports: [
 	BrowserModule,
