@@ -3,11 +3,7 @@
 </div>
 
 <div style="display: flex; flex-direction: column;">
-    <book-details [item]="book" >
-
-    </book-details>
-
-    <book-details [item]="book" titleColor="red">
+    <book-details *ngFor="let book of booksList" [item]="book" >
 
     </book-details>
 </div>

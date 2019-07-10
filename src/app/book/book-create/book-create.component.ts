@@ -25,6 +25,12 @@ export class BookCreateComponent implements OnInit {
 
 	saveBook() {
 		console.log('Emit event');
-		this.newBook.emit(this.book);
+        this.newBook.emit(this.book);
+        this.book = {
+            author: '',
+            description: '',
+            publishedDate: new Date(),
+            title: ''
+        };
 	}
 }

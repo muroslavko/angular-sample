@@ -8,6 +8,10 @@
 
 </app-book-create>
 
-<book-list>
+<div *ngIf="books.length >= 4">
+    This list is too long
+</div>
+
+<book-list [books]="books">
 
 </book-list>
