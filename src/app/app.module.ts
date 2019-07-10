@@ -9,6 +9,7 @@ import { BookDetailsComponent } from './book/book-details/book-details.component
 import { BookCreateComponent } from './book/book-create/book-create.component';
 import { BookPageComponent } from './book/book-page/book-page.component';
 import { ZoomDirective } from './directive/zoom.directive';
+import { BookTitlePipe } from './pipes/book-title.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ZoomDirective } from './directive/zoom.directive';
 	BookDetailsComponent,
 	BookCreateComponent,
 	BookPageComponent,
-	ZoomDirective
+	ZoomDirective,
+	BookTitlePipe
   ],
   imports: [
 	BrowserModule,
