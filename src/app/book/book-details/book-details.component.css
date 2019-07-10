@@ -32,10 +32,10 @@
     margin-right: 0;
   }
 
-  .book-title {
+  .book-title-block {
     position: relative;
     z-index: 1;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     font-family: "Ubuntu", sans-serif;
     font-size: 1.25em;
     line-height: 2.5em;
@@ -46,7 +46,7 @@
 	  cursor: pointer;
 	  color: #81a1d4;
   }
-  .book-title:before {
+  .book-title-block:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -57,6 +57,7 @@
   }
   .book-title span {
     padding-left: 15px;
+    /* margin-bottom: 0.5em; */
   }
   .book-details {
     padding-left: 15px;
@@ -65,4 +66,14 @@
     line-height: em(27);
     font-weight: 400;
     color: #959595;
+  }
+
+  .edit-book{
+    margin-left: 1rem;
+    cursor: pointer;
+    font-size: 0.75rem;
+  }
+
+  .edit-book:hover{
+      color: gray;
   }

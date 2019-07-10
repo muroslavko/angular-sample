@@ -1,4 +1,9 @@
 <div class="book">
-    <div class="book-title" style="margin-bottom: 0.5em;" [style.color]="titleColor" ><span>{{item?.title}}</span></div>
+    <div class="book-title-block">
+        <span class="book-title" [style.color]="titleColor">{{item?.title}}</span>
+        <span class="edit-book" (click)="editTitleHidden = !editTitleHidden" >edit</span>
+    </div>
     <div class="book-details" appZoom>{{item?.description}}</div>
+
+    <input [hidden]="editTitleHidden" type="text" required="required" [(ngModel)]="title" name="title" (keyup)="titleChanged()">
 </div>
