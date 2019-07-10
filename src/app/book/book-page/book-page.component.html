@@ -1,10 +1,10 @@
-<button class="btn btn-submit" (click)="hideCreateBook = !hideCreateBook" style="margin-bottom: 1em;">
+<button class="btn btn-submit" (click)="showEdit()" style="margin-bottom: 1em;">
 	<span [hidden]="!hideCreateBook"> Show </span>
 	<span [hidden]="hideCreateBook"> Hide </span>
 	edit
 </button>
 
-<app-book-create [hidden]="hideCreateBook" (newBook)="addNewBook($event)">
+<app-book-create [hidden]="hideCreateBook" [book]="selectedBook" (bookChange)="save($event)">
 
 </app-book-create>
 
@@ -12,6 +12,6 @@
     This list is too long
 </div>
 
-<book-list [books]="books">
+<book-list [books]="books" (itemSelected)="select($event)">
 
 </book-list>

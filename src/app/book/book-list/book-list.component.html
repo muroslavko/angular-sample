@@ -3,7 +3,7 @@
 </div>
 
 <div style="display: flex; flex-direction: column;">
-    <book-details *ngFor="let book of booksList" [item]="book" >
+    <book-details *ngFor="let book of booksList; let index = index" [item]="book" [index]='index' (itemSelected)="bookSelected($event)">
 
     </book-details>
 

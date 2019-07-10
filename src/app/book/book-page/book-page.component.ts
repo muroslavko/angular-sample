@@ -10,6 +10,8 @@ export class BookPageComponent implements OnInit {
 
 	hideCreateBook = true;
     books: Book[];
+    selectedBook: Book = {} as Book;
+    selectedBookIndex: number = -1;
 	constructor() { }
 
 	ngOnInit() {
@@ -24,11 +26,37 @@ export class BookPageComponent implements OnInit {
             publishedDate: new Date(1937, 9, 21),
             title: 'The Hobbit, or There and Back Again'
         }]
-	}
+    }
+    
+    showEdit() {
+        if (this.hideCreateBook) {
+            this.selectedBook = {} as Book;
+            this.selectedBookIndex = -1;
+        } else {
+            this.selectedBook = {
+                author: '',
+                description: '',
+                publishedDate: new Date(),
+                title: ''
+            };
+        }
+        this.hideCreateBook = !this.hideCreateBook;
+    }
 
-	addNewBook(newBook: Book) {
-        console.log('This is new book', newBook);
-        this.books.push(newBook);
+    save(newBook: Book){
+        if(this.selectedBookIndex === -1){
+            this.books.push(newBook);
+        } else {
+            this.books[this.selectedBookIndex] = newBook;
+        }
+        this.selectedBookIndex = -1;
         this.hideCreateBook = true;
-	}
+    }
+    
+    select(index: number){
+        this.selectedBook = Object.assign({}, this.books[index]);
+        this.selectedBookIndex = index;
+        this.hideCreateBook = false;
+        console.log(this.selectedBook)
+    }
 }

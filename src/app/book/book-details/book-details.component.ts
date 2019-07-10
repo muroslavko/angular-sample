@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy, OnChanges, SimpleChanges } from '@angular/core';
 import { Book } from 'src/app/models/book';
 
 @Component({
@@ -6,21 +6,29 @@ import { Book } from 'src/app/models/book';
     templateUrl: './book-details.component.html',
     styleUrls: ['./book-details.component.css']
 })
-export class BookDetailsComponent implements OnInit {
+export class BookDetailsComponent implements OnInit, OnDestroy, OnChanges {
 
     @Input() item: Book;
-    @Input('bookTitle') title: string;
-    @Output('bookTitleChange') titleChange = new EventEmitter<string>();
+    @Input('index') itemIndex: number;
     @Input() titleColor: string;
-
-    editTitleHidden = true;
+    @Output() itemSelected =  new EventEmitter<number>();
 
     constructor() { }
 
     ngOnInit() {
+        console.log('BookDetailsComponent init')
     }
 
-    titleChanged() {
-        this.titleChange.emit(this.title);
+    bookSelected(){
+        this.itemSelected.emit(this.itemIndex);
+        // console.log(this.itemIndex);
+    }
+
+
+    ngOnChanges(changes: SimpleChanges): void {
+        console.log('BookDetailsComponent ngOnChanges', changes)
+    }
+    ngOnDestroy(): void {
+        console.log('BookDetailsComponent ngOnDestroy')
     }
 }
